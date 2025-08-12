@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  # Service pour l'application React
+  web:
+    # Construit l'image Docker à partir du Dockerfile dans le répertoire courant
+    build: .
+    # Mappe le port 3000 de votre machine au port 80 du conteneur
+    ports:
+      - "3000:80"
+    # Nom du conteneur pour une gestion plus facile
+    container_name: react-test-generator-app
+    # Redémarre automatiquement le conteneur en cas d'arrêt non sollicité
+    restart: unless-stopped
+
